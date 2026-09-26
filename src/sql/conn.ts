@@ -1,8 +1,8 @@
-import { Connection,createConnection } from "mysql2";
+import { Pool,createPool } from "mysql2";
 import dotenv from "dotenv";
 dotenv.config();    
 
-const db:Connection = createConnection({
+const db:Pool = createPool({
     host: process.env.SQL_HOST as string,
     user: process.env.SQL_USER as string,
     password: process.env.SQL_PASSWORD as string,
