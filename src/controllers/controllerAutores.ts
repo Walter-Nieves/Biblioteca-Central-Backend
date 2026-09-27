@@ -11,6 +11,7 @@ export function obtenerAutores(_: Request, res: Response) {
     'SELECT * FROM autores WHERE isDeleted = FALSE',
     (err, results) => {
       if (err) {
+        console.error(err);
         return res.status(500).json({ error: 'Error al obtener los autores' });
       }
       res.json(results);
